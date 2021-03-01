@@ -13,7 +13,7 @@ const calculateID = (idPrefix, data) => {
 }
 
 module.exports = fp(async function (fastify, opts) {
-  fastify.decorateRequest('mockDataInsert', function insert(category, data) {
+  fastify.decorateRequest('mockDataInsert', function (category, data) {
     const request = this
     const idPrefix = catToPrefix[category]
     const id = calculateID(idPrefix, data)
